@@ -3,6 +3,7 @@ package com.example;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -12,9 +13,10 @@ import static org.junit.Assert.*;
 @RunWith(MockitoJUnitRunner.class)
 public class CatTest {
 
-    @Spy
+    @Mock
     Feline feline;
     Cat cat;
+
 
     @Before
     public void setUp() {
@@ -33,4 +35,5 @@ public class CatTest {
         String actualResult = cat.getSound();
         assertEquals(expectedResult, actualResult);
     }
+
 }

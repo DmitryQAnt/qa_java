@@ -4,7 +4,8 @@ import java.util.List;
 
 public class Lion {
 
-    boolean hasMane;
+    private boolean hasMane;
+    private String sex;
     private Feline feline;
 
     public Lion(String sex) throws Exception {
@@ -16,12 +17,13 @@ public class Lion {
             throw new Exception("Используйте допустимые значения пола животного - самей или самка");
         }
     }
-
-    public Lion(Feline feline) {
+    // Алеся, привет!  Я убрал создание объекта и добавил конструктор, как ты указала.
+    // Правда, на мой неофитский взгляд, передавать в него параметр sex - лишнее. Тесты сразу его затребовали (их тоже изменил),
+    // а тестовой нагрузки он, опять же на мой взгляд, не несет.
+    public Lion(String sex, Feline feline) {
         this.feline = feline;
+        this.sex = sex;
     }
-
-    //Feline feline = new Feline();
 
     public int getKittens() {
         return feline.getKittens();

@@ -19,14 +19,14 @@ public class LionTest {
     @Test
     public void getFood() throws Exception {
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion("Самец", feline);
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         assertEquals(expected, lion.getFood());
     }
     @Test
     public void doesGetKittensIsOne() {
 
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion("Самец", feline);
         Mockito.when(lion.getKittens()).thenReturn(1);
         int expectedResult = 1;
         int actualResult = lion.getKittens();
@@ -34,7 +34,7 @@ public class LionTest {
     }
     @org.junit.jupiter.api.Test
     void doesHaveManeIsFalse() {
-        Lion lion = new Lion(feline);
+        Lion lion = new Lion("Самец", feline);
         boolean expectedResult = false;
         boolean actualResult = lion.doesHaveMane();
         assertEquals(expectedResult, actualResult);
