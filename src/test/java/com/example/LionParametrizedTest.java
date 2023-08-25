@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @RunWith(Parameterized.class)
 public class LionParametrizedTest {
+    private Feline feline;
 
     private final String sex;
     private final boolean expected;
@@ -29,13 +30,13 @@ public class LionParametrizedTest {
 
     @Test
     public void testLionConstructor() throws Exception {
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion("Самец", feline);
         boolean actual = lion.doesHaveMane();
         assertEquals(expected, lion.doesHaveMane());
     }
     @Test
     public void isLionIsEmpty() throws Exception {
-        assertThrows(Exception.class, () -> new Lion("абракадабра"));
+        assertThrows(Exception.class, () -> new Lion("абракадабра", feline));
     }
 }
 

@@ -24,7 +24,7 @@ public class LionTest {
         assertEquals(expected, lion.getFood());
     }
     @Test
-    public void doesGetKittensIsOne() {
+    public void doesGetKittensIsOne() throws Exception {
 
         Lion lion = new Lion("Самец", feline);
         Mockito.when(lion.getKittens()).thenReturn(1);
@@ -33,7 +33,7 @@ public class LionTest {
         assertEquals(expectedResult, actualResult);
     }
     @org.junit.jupiter.api.Test
-    void doesHaveManeIsFalse() {
+    void doesHaveManeIsFalse() throws Exception {
         Lion lion = new Lion("Самец", feline);
         boolean expectedResult = false;
         boolean actualResult = lion.doesHaveMane();
